@@ -31,12 +31,13 @@ const Currency = () => {
     return (
         <div>
         <select style={listTitleStyle} id="inputGroupSelect01" onChange={(event) => setNewCurrency(event.target.value)} >
-        <option style= {listOptStyle} value="Dollar" name="dollars" defaultValue >$ Dollar</option>
-        <option style= {listOptStyle} value="Pound" name="pound">£ Pound</option>
-        <option style= {listOptStyle} value="Euro" name="euro">€ Euro</option>
-        <option style= {listOptStyle} value="Ruppee" name="ruppee">₹ Ruppee</option>
+        <option style= {listOptStyle} value="$" name="dollars" >$ Dollar</option>
+        <option style= {listOptStyle} value="£" name="pound" selected >£ Pound</option>
+        <option style= {listOptStyle} value="€" name="euro">€ Euro</option>
+        <option style= {listOptStyle} value="₹" name="ruppee">₹ Ruppee</option>
         </select>
-        <button onClick={updateCurrency}>Save</button>
+        <button className="btn btn-primary" onClick={updateCurrency} style={{ marginLeft: '1rem' }}>Save</button>
+        <span>{currency}</span>
         </div>
     );
 };
