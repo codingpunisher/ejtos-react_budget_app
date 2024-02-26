@@ -32,8 +32,8 @@ const Budget = () => {
     return (
 <div className='alert alert-secondary'>
 <span>Budget €</span>
-<input type="number" step="10" value={newBudget} onChange={handleBudgetChange}></input>
-<button className="btn btn-primary" onClick={submitChange} style={{ marginLeft: '2rem' }}>Update</button>
+<input type="number" step="10" value={newBudget} onChange={handleBudgetChange} style={{ width: '100px' }}></input>
+<button className="btn btn-primary" onClick={submitChange} style={{ marginLeft: '1rem' }}>Update</button>
 </div>
     );
 };
