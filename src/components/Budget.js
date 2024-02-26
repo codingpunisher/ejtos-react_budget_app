@@ -5,23 +5,35 @@ import { AppContext } from '../context/AppContext';
 const Budget = () => {
     const { dispatch } = useContext(AppContext);
     const { budget } = useContext(AppContext);
-    const [newBudget, setNewBudget] = useState('');
+    const {remaining} = useContext(AppContext);
+    const [newBudget, setNewBudget] = useState(budget);
+    const setLimit = budget - remaining;
 
     const handleBudgetChange = (event) => {
         event.preventDefault();
         setNewBudget(event.target.value);
-            
-            dispatch ({
-                type: 'SET_BUDGET',
-                payload: newBudget,
-            });
 
     };
 
+    function submitChange () {
+    
+        if (newBudget > setLimit){
+        dispatch ({
+            type: 'SET_BUDGET',
+            payload: newBudget,
+        });
+    }else{
+        alert('You cannot reduce the budget value lower than the spending')
+        setNewBudget(budget);
+        }
+
+    }
+
     return (
 <div className='alert alert-secondary'>
-<span>Budget:£{ budget } </span>
+<span>Budget €</span>
 <input type="number" step="10" value={newBudget} onChange={handleBudgetChange}></input>
+<button className="btn btn-primary" onClick={submitChange} style={{ marginLeft: '2rem' }}>Update</button>
 </div>
     );
 };
