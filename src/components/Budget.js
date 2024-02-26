@@ -6,6 +6,7 @@ const Budget = () => {
     const { dispatch } = useContext(AppContext);
     const { budget } = useContext(AppContext);
     const {remaining} = useContext(AppContext);
+    const {currency} = useContext(AppContext);
     const [newBudget, setNewBudget] = useState(budget);
     const setLimit = budget - remaining;
 
@@ -31,7 +32,7 @@ const Budget = () => {
 
     return (
 <div className='alert alert-secondary'>
-<span>Budget €</span>
+<span>Budget {currency}</span>
 <input type="number" step="10" value={newBudget} onChange={handleBudgetChange} style={{ width: '100px' }}></input>
 <button className="btn btn-primary" onClick={submitChange} style={{ marginLeft: '1rem' }}>Update</button>
 </div>

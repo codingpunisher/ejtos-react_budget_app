@@ -37,7 +37,6 @@ const Currency = () => {
         <option style= {listOptStyle} value="₹" name="ruppee">₹ Ruppee</option>
         </select>
         <button className="btn btn-primary" onClick={updateCurrency} style={{ marginLeft: '1rem' }}>Save</button>
-        <span>{currency}</span>
         </div>
     );
 };
