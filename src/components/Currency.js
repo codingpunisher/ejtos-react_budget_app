@@ -12,7 +12,7 @@ const Currency = () => {
         border: 'none',
         borderRadius: '5px',
         padding: '5px',
-        width: '150px'
+        width: '200px'
       };
 
       const listOptStyle = {
@@ -31,8 +31,9 @@ const Currency = () => {
     return (
         <div>
         <select style={listTitleStyle} id="inputGroupSelect01" onChange={(event) => setNewCurrency(event.target.value)} >
+        <option defaultValue hidden>Currency ({currency} Pound)</option>
         <option style= {listOptStyle} value="$" name="dollars" >$ Dollar</option>
-        <option style= {listOptStyle} value="£" name="pound" selected >£ Pound</option>
+        <option style= {listOptStyle} value="£" name="pound">£ Pound</option>
         <option style= {listOptStyle} value="€" name="euro">€ Euro</option>
         <option style= {listOptStyle} value="₹" name="ruppee">₹ Ruppee</option>
         </select>
