@@ -19,6 +19,7 @@ const Currency = () => {
         color: 'black',
         backgroundColor: 'lightgreen',
         border: 'none'
+        
       };
 
       function updateCurrency (){
